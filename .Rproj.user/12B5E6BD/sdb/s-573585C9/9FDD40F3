@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#' Returns rows with NA as string or dataframe\n#'\n#' @param df A dataframe.\n#' @param show A boolean.\n#' @return If \\code(show), returns a string. Else, it returns a dataframe\n#' @examples\n#' na_rows(df)\n#' na_rows(df, show = TRUE)\n#'\n#'\nna_rows <- function(df, show=FALSE)\n{\n  library(dplyr)\n  if (show)\n  {\n    missing_rows <- df[rowSums(is.na(df)) > 0, ]\n    return(missing_rows)\n  }\n  else\n  {\n    num_missing <- (rowSums(is.na(df)) > 0) %>% sum()\n    missing_rows <- paste(\"Num rows w/ NA:\", num_missing)\n    print(missing_rows)\n  }\n}\n\n\n\n",
+    "created" : 1493394109608.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2285145889",
+    "id" : "9FDD40F3",
+    "lastKnownWriteTime" : 1493396456,
+    "last_content_update" : 1493396456610,
+    "path" : "~/Documents/my_packages/jarvFunc/R/na_rows.R",
+    "project_path" : "R/na_rows.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

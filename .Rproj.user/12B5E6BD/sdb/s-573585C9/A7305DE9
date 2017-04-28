@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(data.table)\nlibrary(dplyr)\nlibrary(modelr)\nlibrary(purrr)\nlibrary(e1071)\n# install.packages(\"caret\")\nlibrary(caret)\nsetwd(\"~/Documents/601/final_proj/data/trip_data\")\nset.seed(1)\n\n\ntrips <- fread(\"sample_train.csv\") %>% as.data.frame()\ntrips <- trips[,-1]\ntrips[,-1] <- scale(trips[,-1])\nmodel <- svm(lateness ~., data = trips)\ntable(tot_lateness)\n# trips <- read.csv(\"trip_train.csv\", nrow = 5000)\ntrips <- trips[,-1]\n\n# no missing data\nis.na(trips) %>% sum()\n\ntrain_control <- trainControl(method=\"cv\", number = 5)\n\nfit <- train(lateness ~., data = trips, method = \"nb\",\n             trControl = train_control)\n\ntrain_ind <- sample(nrow(trips), nrow(trips)*.75)\nmodel <- naiveBayes(lateness ~ ., data = trips[train_ind,])\npred <- predict(model, trips[-train_ind, -1])\ntable(pred, trips[-train_ind, 1])\nmean(pred != trips[-train_ind, 1])\n\n\n\n\nna_rows <- function(df, show=FALSE)\n{\n  library(dplyr)\n  if (show)\n  {\n    missing_rows <- df[rowSums(is.na(df)) > 0, ]\n    return(missing_rows)\n  }\n  else\n  {\n    num_missing <- (rowSums(is.na(df)) > 0) %>% sum()\n    missing_rows <- paste(\"Num rows w/ NA:\", num_missing)\n    print(missing_rows)\n  }\n}\n\nna_cols <- function(df, show=FALSE)\n{\n  if (show)\n  {\n    missing_cols <- colSums(is.na(df))\n    return(missing_cols)\n  }\n  else\n  {\n    num_missing <- colSums(is.na(df)) %>% sum()\n    missing_cols <- paste(\"Num cols w/ NA:\", num_missing)\n    print(missing_cols)\n  }\n}\n\nlibrary(ggplot2)\ndat <- diamonds\n\ndat[1,1] <- NA\nna_rows(dat, show = T)\n",
+    "created" : 1493346210658.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1327112048",
+    "id" : "A7305DE9",
+    "lastKnownWriteTime" : 1493392786,
+    "last_content_update" : 1493392786110,
+    "path" : "~/Documents/601/final_proj/analysis.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

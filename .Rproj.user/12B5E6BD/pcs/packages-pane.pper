@@ -1,0 +1,7 @@
+{
+    "installOptions" : {
+        "installDependencies" : true,
+        "installFromRepository" : true,
+        "libraryPath" : "/home/jarvis/Documents/my_packages/jarvFunc/packrat/lib/x86_64-pc-linux-gnu/3.3.1"
+    }
+}

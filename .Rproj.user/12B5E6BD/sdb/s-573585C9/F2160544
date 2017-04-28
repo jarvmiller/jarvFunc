@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "Package: jarvFunc\nType: Package\nTitle: Collection of my functions\nVersion: 0.1.0\nAuthor: person(\"First\", \"Last\", email = \"first.last@example.com\",\n               role = c(\"aut\", \"cre\"))\nMaintainer: Jarvis D. Miller <jarvm@umich.edu>\nDescription: This package includes all of the functions I wrote to make my\n    life easier. They may or may not be efficient.\nLicense: GPL-3\nImports:\n    dplyr\nEncoding: UTF-8\nLazyData: true\nRoxygenNote: 6.0.1\n",
+    "created" : 1493395045722.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2464454896",
+    "id" : "F2160544",
+    "lastKnownWriteTime" : 1493396182,
+    "last_content_update" : 1493396182768,
+    "path" : "~/Documents/my_packages/jarvFunc/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "dcf"
+}

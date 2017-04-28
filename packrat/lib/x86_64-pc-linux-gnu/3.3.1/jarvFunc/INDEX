@@ -1,0 +1,3 @@
+hello                   Hello, World!
+na_cols                 Returns cols with NA as string or vector
+na_rows                 Returns rows with NA as string or dataframe

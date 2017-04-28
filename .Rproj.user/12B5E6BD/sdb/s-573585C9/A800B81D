@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#' Returns cols with NA as string or vector\n#'\n#' @param df A dataframe.\n#' @param show A boolean.\n#' @return If \\code(show), returns a string. Else, it returns a vector\n#' @examples\n#' na_cols(df)\n#' na_cols(df, show = TRUE)\n#'\n#'\n\nna_cols <- function(df, show=FALSE)\n{\n  if (show)\n  {\n    missing_cols <- colSums(is.na(df))\n    return(missing_cols)\n  }\n  else\n  {\n    num_missing <- colSums(is.na(df)) %>% sum()\n    missing_cols <- paste(\"Num cols w/ NA:\", num_missing)\n    print(missing_cols)\n  }\n}\n",
+    "created" : 1493396220659.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3299317148",
+    "id" : "A800B81D",
+    "lastKnownWriteTime" : 1493396454,
+    "last_content_update" : 1493396454260,
+    "path" : "~/Documents/my_packages/jarvFunc/R/na_cols.R",
+    "project_path" : "R/na_cols.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
